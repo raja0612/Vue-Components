@@ -5,23 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Computed and Watch Propeties</title>
+    <title>Components</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.js"></script>
-
 </head>
 
 <body>
-
     <div id="app">
         <p :style="question">
             Q: What is Component?
         </p>
         <p :style="answer">
-            Answer: Components are reusable vue instances with name, so it shares all other
-            default vue instances properties like computed,
-            watch, methods, data.
-            Componets must return data as a function, because each component maintains
-            thier own memory.
+            Answer: Components are reusable vue instances with name, so it shares all other default vue instances properties like computed,
+            watch, methods, data. Components must return data as a function, 
+            because function gets executed everytime in the memory when component is created.
         </p>
         <hr>
         <my-component></my-component>

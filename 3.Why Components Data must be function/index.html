@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Components</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        Component 1 : <global-component></global-component>
+        Component 2 : <global-component></global-component>
+    </div>
+    <div>
+        Here we have two components called Component 1 and Component 2 
+        but these two components are using same object in memory called person (look in app.js).
+        Here I cheated Vue Component because vue component data must be object.
+        Even if I click on Change Name button in one place, it is updating name on two components.
+        So thats not valid criteria, because each component should maintain their own data in memory.
+
+        Thats why Vue suggests that the data must be function return, so each component maintain thier own 
+        data in memory and it not conflicts with other components data.
+    </div>
+    <hr>
+    The solution for above problem is Vue component must return data in function.
+    Here Clicking on Change Name button  changes name on respective component.
+    <div id="app2">
+        Component 1 : <my-component></my-component>
+        Component 2 : <my-component></my-component>
+    </div>
+   
+    <script src="app.js"></script>
+</body>
+
+</html>
