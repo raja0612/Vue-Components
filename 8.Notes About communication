@@ -1,0 +1,32 @@
+
+1. Parent to Child  component communication.
+
+In Parent component.
+<child-component :name="data property or value"></child-component>
+
+In child component:
+
+receive the parent passed values as props. props may be array or object
+
+props: ['name must match  with parent component'].
+
+From child to parent.
+
+1. emit the event.
+
+this.$event('eventName', data)
+
+In parent component listen to that event.
+
+<child-component @eventName="(data == $event) or method($event)"
+
+2 . In Vue ,Component Communication is done through Parent to Child but not Child to Child components directly.
+
+So In order to communicate with child to child component , we need follow this way
+
+Firstly, Parent send some call back function to one of it's child as prop and then child component
+use that call back function to send data to parent.
+
+secondly, again parent component send that data as prop to it's other child.
+
+Thirdly,using Event Bus.
